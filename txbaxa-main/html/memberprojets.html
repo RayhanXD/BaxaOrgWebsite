@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BAXA Member Projects</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="../assets/favicon.ico" />
+    <style>
+      /* Existing Projects Page Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e7e7e7;
+      }
+
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        animation: fadeIn 1s ease-out;
+      }
+
+      /* Card Styles for Projects */
+      .card_projects {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Fixed height for uniformity */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-size: cover;
+        background-position: center;
+      }
+      .card_projects:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      .card_projects-content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+        color: white;
+        text-align: center;
+      }
+      .card_projects h3 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      .card_projects p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+      .card_projects a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #d2b48c;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- New Banner & Fade-In Styles (from officers page) --- */
+      .team-section {
+        background-image: url("/assets/MemberProjects/memberBanner.jpg"); /* Update image path if needed */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        background-position: center 105%;
+        height: 30vh;
+        position: relative;
+        transition: background-position 0.5s ease-out;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .team-title {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        z-index: 1;
+        width: 100%;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 768px) {
+        .projects-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      id="baxa-nav"
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/index.html">
+            <img src="/assets/images/logo.svg" width="250" />
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            data-target="navMenu"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <!-- Dropdown Menu for "Pages" -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">About Us</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/index.html#navMenu"
+                  >Our Mission</a
+                >
+                <a class="navbar-item" href="/html/officers.html">Our Team</a>
+                <a class="navbar-item" href="/html/Alumni.html">Alumni</a>
+                <a class="navbar-item" href="/html/dashboard.html"
+                  >Information Dashboard</a
+                >
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">Events and Projects</a>
+              <div class="navbar-dropdown">
+                <!-- <a class="navbar-item" href="/html/socialevents.html">Events</a> -->
+                <a class="navbar-item" href="/html/memberprojets.html"
+                  >Member Projects</a
+                >
+                <a class="navbar-item" href="/html/ConsultingProjects.html">Consulting Projects</a>
+                <a class="navbar-item" href="/html/calander.html">Calendar</a>
+              </div>
+            </div>
+            <a class="navbar-item" href="/html/sponsors.html">Sponsor Us</a>
+            <a class="navbar-item" href="/html/membership.html">Join</a>
+            <a class="navbar-item" href="/html/FAQ.html">FAQ</a>
+            <a class="navbar-item" href="/html/login.html">Portal</a>
+            <a
+              class="navbar-item"
+              href="https://www.instagram.com/txbaxa/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/instagram.svg"
+                alt="Instagram Icon"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://www.linkedin.com/company/texas-business-analytics-association/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/linkedin.svg"
+                alt="BAXA LinkedIn Group"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://linktr.ee/txbaxa"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/link.svg"
+                alt="Linktree Icon"
+                style="height: 17px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner Section (New) -->
+    <div class="team-section">
+      <div class="overlay">
+        <!-- Change the title text as desired -->
+        <h1 class="team-title fade-in">Member Projects</h1>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div
+        class="card_projects fade-in"
+        style="background-image: url('/assets/MemberProjects/marchmadness.png')"
+      >
+        <div class="card_projects-content">
+          <a
+            href="https://docs.google.com/presentation/d/1qQkiaPGgSyxyT_9f11Wxutz-V-klVGsZV8rWBS10Ay4/edit?usp=sharing"
+            target="_blank"
+          >
+            🔗 View Full Presentation
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div
+        class="card_projects fade-in"
+        style="background-image: url('/assets/MemberProjects/MLB.png')"
+      >
+        <div class="card_projects-content">
+          <a
+            href="https://docs.google.com/presentation/d/11j-qS7oDKszGFapV9jmhHC_tKhzOd6uQaUuluN47zkE/edit?usp=sharing"
+            target="_blank"
+          >
+            🔗 View Full Presentation
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div
+        class="card_projects fade-in"
+        style="background-image: url('/assets/MemberProjects/beer.png')"
+      >
+        <div class="card_projects-content">
+          <a
+            href="https://docs.google.com/presentation/d/14GHDSqkrx_qNVWWdRC9-oxQNN3fgQ0GloED6SpxeFqQ/edit?usp=sharing"
+            target="_blank"
+          >
+            🔗 View Full Presentation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="baxa-footer" class="footer">
+      <div class="content container has-text-centered columns">
+        <div class="column is-3">
+          <a href="../index.html">
+            <img src="../assets/images/logo.svg" />
+          </a>
+        </div>
+        <div class="column is-7">
+          <div class="title is-hidden-mobile">
+            Subscribe to Our Mailing List
+          </div>
+          <div class="subtitle">
+            Sign up to receive the latest updates from Texas BAXA!
+          </div>
+        </div>
+        <div class="column my-2 is-2">
+          <button class="button baxa-button is-medium">
+            <a href="https://forms.gle/v4PQqzLAAU1FJokk7" target="_blank"
+              >Sign Up</a
+            >
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Fade-In and Parallax Banner Effect -->
+    <script>
+      // Intersection Observer for fade-in effect on elements with class "fade-in"
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, appearOptions);
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+      });
+
+      // Parallax effect for the banner background
+      window.addEventListener("scroll", function () {
+        const banner = document.querySelector(".team-section");
+        if (banner) {
+          const offset = window.pageYOffset;
+          banner.style.backgroundPosition =
+            "center " + (50 + offset * 0.3) + "%";
+        }
+      });
+    </script>
+  </body>
+</html>

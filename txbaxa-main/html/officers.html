@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Texas BAXA is UT Austin's student-run hub for everything business analytics."
+    />
+    <meta
+      name="keywords"
+      content="business analytics, business, technology, data science, education, student organization"
+    />
+    <title>Texas Business Analytics Association - Meet the Officers</title>
+    <link rel="icon" href="../assets/favicon.ico" />
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="../index.js"></script>
+
+    <!-- New CSS for Pop Out Animation and Fade-In Effect -->
+    <style>
+      /* Smooth transition for transform and box-shadow (pop out effect) */
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      /* Scale up and add shadow on hover for the pop out effect */
+      .card:hover {
+        transform: scale(1.05) translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Fade-in effect for officer cards */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Banner Section Styles */
+      .team-section {
+        background-image: url("/assets/images/Laughing_suits.jpeg"); /* Update this image path as needed */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center 100%; /* Increased value moves the image down */
+        height: 45vh;
+        position: relative;
+        /* Added transition for smoother background position changes */
+        transition: background-position 0.5s ease-out;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+      }
+      .team-title {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        z-index: 1;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Navbar -->
+    <nav
+      id="baxa-nav"
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/index.html">
+            <img src="/assets/images/logo.svg" width="250" />
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            data-target="navMenu"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <!-- Dropdown Menu for "Pages" -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> About Us </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/index.html#navMenu"
+                  >Our Mission</a
+                >
+                <a class="navbar-item" href="/html/officers.html">Our Team</a>
+                <a class="navbar-item" href="/html/Alumni.html">Alumni</a>
+                <a class="navbar-item" href="/html/dashboard.html"
+                  >Information Dashboard</a
+                >
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> Events and Projects </a>
+              <div class="navbar-dropdown">
+                <!-- <a class="navbar-item" href="/html/socialevents.html">Events</a> -->
+                <a class="navbar-item" href="/html/memberprojets.html"
+                  >Member Projects</a
+                >
+                <a class="navbar-item" href="/html/ConsultingProjects.html">Consulting Projects</a>
+                <a class="navbar-item" href="/html/calander.html">Calendar</a>
+              </div>
+            </div>
+            <a class="navbar-item" href="/html/sponsors.html"> Sponsor Us </a>
+            <a class="navbar-item" href="/html/membership.html"> Join </a>
+            <a class="navbar-item" href="/html/FAQ.html"> FAQ </a>
+            <a class="navbar-item" href="/html/login.html">Portal</a>
+            <a
+              class="navbar-item"
+              href="https://www.instagram.com/txbaxa/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/instagram.svg"
+                alt="Instagram Icon"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://www.linkedin.com/company/texas-business-analytics-association/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/linkedin.svg"
+                alt="BAXA LinkedIn Group"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://linktr.ee/txbaxa"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/link.svg"
+                alt="Linktree Icon"
+                style="height: 17px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Team Banner -->
+    <div class="team-section">
+      <div class="overlay">
+        <!-- Added the fade-in class to the team title so it fades in on page load -->
+        <h1 class="team-title fade-in">Our Team</h1>
+      </div>
+    </div>
+
+    <!-- Officers Section -->
+    <section id="baxa-board" class="hero is-link">
+      <!-- Executive Board -->
+      <div class="hero-body container" style="position: relative; z-index: 1">
+        <div
+          class="title"
+          style="
+            font-size: 3rem;
+            color: var(--bg-color);
+            text-align: left;
+            margin-bottom: 0;
+          "
+        >
+          Executive Board
+        </div>
+        <div class="columns">
+
+          <!-- President -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Anooshka.png"
+                    alt="Tech Vice President"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/anooshkaerusu/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Anooshka Erusu</p>
+                    <p class="subtitle is-5">President</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics and CBHP major interested in Data
+                  Science and Machine Learning (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Internal Vice President -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Isha.png"
+                    alt="Internal Vice President"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/ishaboinapalli/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Isha Boinapalli</p>
+                    <p class="subtitle is-5">Internal Vice President</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Business Analytics major interested in Big Data
+                  Analytics and Consulting (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- External Vice President -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Mehal.png"
+                    alt="External Vice President"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/mehal-agrawal-0841ab2aa/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Mehal Agrawal</p>
+                    <p class="subtitle is-5">External Vice President</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Statistics and Data Science major interested in the
+                  intersection of Business, Data Science, and AI (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Directors Section -->
+      <div class="hero-body container" style="position: relative; z-index: 1">
+        <div
+          class="title Directors"
+          style="
+            font-size: 3rem;
+            color: var(--bg-color);
+            text-align: left;
+            margin-bottom: 0;
+          "
+        >
+          Directors
+        </div>
+        <div class="columns">
+
+          <!-- Internal Marketing Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/roma.png"
+                    alt="Internal Marketing Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/roma-jani/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Roma Jani</p>
+                    <p class="subtitle is-5">Internal Marketing Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Sophomore Canfield Business Honors + MIS major 
+                  interested in AI, Data, and Business Operations
+                  <br />(she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+           <!-- External Marketing Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/akhil.png"
+                    alt="External Marketing Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/akhil-morusupalli/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Akhil Morusupalli</p>
+                    <p class="subtitle is-5">External Marketing Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Sophomore MIS Major interested 
+                  in Product Management 
+                  <br />(he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+         <!-- Logistics Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/lekha.png"
+                    alt="Logistics Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/saminenilekha/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Lekha Samineni</p>
+                    <p class="subtitle is-5">Logistics Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                Junior Business Analytics Major
+                Interested in Data Analytics
+                  <br />(she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- Finance Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/shreshth.jpeg"
+                    alt="Finance Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/shreshthsaride/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Shreshth Saride</p>
+                    <p class="subtitle is-5">Finance Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Sophomore finance major interested 
+                  in Consulting and AI 
+                  <br />(he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Additional Directors -->
+      <div class="hero-body container" style="position: relative; z-index: 1">
+        <div class="columns">
+
+
+
+
+          <!-- Special Events Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Mythili.png"
+                    alt="Special Events Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/mythilieranki/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Mythili Eranki</p>
+                    <p class="subtitle is-5">Special Events Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Business Analytics major interested in Data
+                  Analytics-Driven Consulting and Startup Culture (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Social Director -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Nish.png"
+                    alt="Social Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/nischayporwar/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Nish Porwar</p>
+                    <p class="subtitle is-5">Social Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Business Analytics major interested in the
+                  intersection of Business, Sports, and Data (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Director of Innovation -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Cammi.png"
+                    alt="Director of Innovation"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/cammitran/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Cammi Tran</p>
+                    <p class="subtitle is-5">Director of Innovation</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Business Analytics Major interested in Data Automation
+                  and AI<br />(she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Academic Directors -->
+      <div class="hero-body container" style="position: relative; z-index: 1">
+        <div
+          class="title Directors"
+          style="
+            font-size: 3rem;
+            color: var(--bg-color);
+            text-align: left;
+            margin-bottom: 0;
+          "
+        >
+          Academic Directors
+        </div>
+        <div class="columns">
+          <!-- Academic Director Manay -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Manay.png"
+                    alt="Academic Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/manaydivatia/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Manay Divatia</p>
+                    <p class="subtitle is-5">Advanced Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Computer Science major interested in bridging the gap
+                  between Data Science and Business Solutions (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Director Rohan -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Rohan.png"
+                    alt="Academic Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/rohankalani12/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Rohan Kalani</p>
+                    <p class="subtitle is-5">Advanced Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior Business Analytics major interested in the intersection
+                  of Business, Data, and Sports (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Academic Director Beginner -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/matthew.png"
+                    alt="Academic Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/matthew-stapp/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Matthew Stapp</p>
+                    <p class="subtitle is-5">Beginner Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Sophomore Business Analytics Major interested 
+                  in Machine Learning and Applied Mathematics. 
+                  (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Academic Director Beginner -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2025-2026/neelabh.jpeg"
+                    alt="Academic Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/neelabh-vijayvargia/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Neelabh Vijayvargia</p>
+                    <p class="subtitle is-5">Beginner Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Junior BHP, BAX, Math Major 
+                  interested in AI/ML and Finance
+                   (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+      <div class="hero-body container" style="position: relative; z-index: 1">
+        <div
+          class="title Directors"
+          style="
+            font-size: 3rem;
+            color: var(--bg-color);
+            text-align: left;
+            margin-bottom: 0;
+          "
+        >
+          Advisors
+        </div>
+        <div class="columns">
+
+          <!-- Social Vice President -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Rashi.png"
+                    alt="Social Vice President"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/rashi-lakhotia3/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Rashi Lakhotia</p>
+                    <p class="subtitle is-5"></p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics and CBHP major passionate about Data
+                  Analytics and Consulting (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- External Vice President -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Ria.png"
+                    alt="External Vice President"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/riamittal22/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Ria Mittal</p>
+                    <p class="subtitle is-5"></p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics major interested in Data Analytics
+                  and Consulting<br />(she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+         <!-- Academic Director Raahil -->
+          <div class="column">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/images/officers/2024-2025/Raahil.png"
+                    alt="Academic Director"
+                  />
+                  <a
+                    class="linkedin"
+                    href="https://www.linkedin.com/in/raahildhingra/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Raahil Dhingra</p>
+                    <p class="subtitle is-5"></p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics major interested in Consulting,
+                  Prediction Analytics, and National Security (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+    </section>
+
+    <!-- Footer and Newsletter Signup -->
+    <footer id="baxa-footer" class="footer">
+      <div class="content container has-text-centered columns">
+        <div class="column is-3">
+          <a href="../index.html">
+            <img src="../assets/images/logo.svg" />
+          </a>
+        </div>
+        <div class="column is-7">
+          <div class="title is-hidden-mobile">
+            Subscribe to Our Mailing List
+          </div>
+          <div class="subtitle">
+            Sign up to receive the latest updates from Texas BAXA!
+          </div>
+        </div>
+        <div class="column my-2 is-2">
+          <button class="button baxa-button is-medium">
+            <a href="https://forms.gle/v4PQqzLAAU1FJokk7" target="_blank"
+              >Sign Up</a
+            >
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for the Team Image Scroll Effect and Fade-In on Scroll -->
+    <script>
+      // Team Image Scroll Effect (if an element with class "team-image" exists)
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+        const teamImage = document.querySelector(".team-image");
+        if (teamImage) {
+          teamImage.style.transform =
+            "translateY(" + scrollPosition * -0.2 + "px)";
+        }
+      });
+
+      // Parallax Effect for the banner: move the background up as you scroll so you see more of the bottom.
+      window.addEventListener("scroll", function () {
+        const banner = document.querySelector(".team-section");
+        if (banner) {
+          const offset = window.pageYOffset;
+          // Adjust the background position's vertical percentage based on scroll offset.
+          banner.style.backgroundPosition =
+            "center " + (100 + offset * 0.3) + "%";
+        }
+      });
+
+      // Intersection Observer for fade-in effect on officer cards and text elements
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (
+          entries,
+          observer
+        ) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        appearOptions);
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+      });
+    </script>
+  </body>
+</html>

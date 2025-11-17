@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Texas BAXA is UT Austin's student-run hub for everything business analytics."
+    />
+    <meta
+      name="keywords"
+      content="business analytics, business, technology, data science, education, student organization"
+    />
+    <title>Texas Business Analytics Association - Meet our Alumni</title>
+    <link rel="icon" href="../assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Existing Alumni Page Styles */
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(120deg, #3498db, #9b59b6, #f39c12);
+        background-size: 400% 400%;
+        animation: gradientBackground 15s ease infinite;
+      }
+
+      @keyframes gradientBackground {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .navbar {
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar.is-active {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+
+      .card {
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Officer name (title) and position (subtitle) styles */
+      .title.is-4 {
+        color: rgb(8, 4, 4);
+        font-weight: bold;
+      }
+
+      .subtitle.is-5 {
+        color: black;
+        font-weight: normal;
+      }
+
+      /* LinkedIn logo styles */
+      .linkedin {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: #0077b5;
+        transition: color 0.3s ease;
+      }
+
+      .linkedin:hover {
+        color: #005983;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 2rem 0;
+      }
+
+      footer a {
+        color: #f39c12;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* --- NEW: Banner Styles (using a different image for the alumni banner) --- */
+      .team-section {
+        background-image: url("/assets/alumni/alumniGang.png"); /* Update image path here if needed */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center 100%;
+        height: 45vh;
+        position: relative;
+        /* Added transition for smoother background position changes */
+        transition: background-position 0.5s ease-out;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+      }
+
+      .team-title {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+      }
+
+      /* --- NEW: Fade-In Animation Styles --- */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Navbar -->
+    <nav
+      id="baxa-nav"
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/index.html">
+            <img src="/assets/images/logo.svg" width="250" />
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            data-target="navMenu"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <!-- Dropdown Menu for "Pages" -->
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> About Us </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/index.html#navMenu"
+                  >Our Mission</a
+                >
+                <a class="navbar-item" href="/html/officers.html">Our Team</a>
+                <a class="navbar-item" href="/html/Alumni.html">Alumni</a>
+                <a class="navbar-item" href="/html/dashboard.html"
+                  >Information Dashboard</a
+                >
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> Events and Projects </a>
+              <div class="navbar-dropdown">
+                <!-- <a class="navbar-item" href="/html/socialevents.html">Events</a> -->
+                <a class="navbar-item" href="/html/memberprojets.html"
+                  >Member Projects</a
+                >
+                <a class="navbar-item" href="/html/ConsultingProjects.html">Consulting Projects</a>
+                <a class="navbar-item" href="/html/calander.html">Calendar</a>
+              </div>
+            </div>
+            <a class="navbar-item" href="/html/sponsors.html"> Sponsor Us </a>
+            <a class="navbar-item" href="/html/membership.html"> Join </a>
+            <a class="navbar-item" href="/html/FAQ.html"> FAQ </a>
+            <a class="navbar-item" href="/html/login.html">Portal</a>
+            <a
+              class="navbar-item"
+              href="https://www.instagram.com/txbaxa/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/instagram.svg"
+                alt="Instagram Icon"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://www.linkedin.com/company/texas-business-analytics-association/"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/linkedin.svg"
+                alt="BAXA LinkedIn Group"
+              />
+            </a>
+            <a
+              class="navbar-item"
+              href="https://linktr.ee/txbaxa"
+              target="_blank"
+            >
+              <img
+                src="/assets/images/icons/link.svg"
+                alt="Linktree Icon"
+                style="height: 17px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Alumni Banner (new section, similar to Officers page) -->
+    <div class="team-section">
+      <div class="overlay">
+        <!-- Added fade-in class so the banner title fades in on load -->
+        <h1 class="team-title fade-in">Our Alumni</h1>
+      </div>
+    </div>
+
+    <!-- Alumni Section -->
+    <section id="baxa-board" class="hero is-link">
+      <div class="hero-body container has-text-centered">
+        <div class="columns is-multiline is-variable is-8">
+
+
+          <!-- President -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/images/officers/2024-2025/Samay.png" alt="Samay Mohapatra" />
+                  <a class="linkedin" href="https://www.linkedin.com/in/samaymohapatra/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Samay Mohapatra</p>
+                    <p class="subtitle is-5">2024-2025 President</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics major interested in Data Processing and Analytical Thinking (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Marketing Director -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/images/officers/2024-2025/Helen.png" alt="Helen Nguyen" />
+                  <a class="linkedin" href="https://www.linkedin.com/in/uthelennguyen/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Helen Nguyen</p>
+                    <p class="subtitle is-5">2024-2025 Marketing Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics major interested in Finance and the Banking Sector (she/her)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Academic Director Ethan -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/images/officers/2024-2025/Ethan.png" alt="Ethan Davenport" />
+                  <a class="linkedin" href="https://www.linkedin.com/in/ethan-davenport/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Ethan Davenport</p>
+                    <p class="subtitle is-5">2024-2025 Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Senior Business Analytics major interested in Data Science and Statistics (he/him)
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- Card 1 -->
+          <div class="column is-one-third">
+            <!-- Added fade-in class -->
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/alumni/anchit.png" alt="Anchit Nath" />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Anchit Nath</p>
+                    <p class="subtitle is-5">2022-2024 Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previously Professional Development Director intrested in teaching about data.
+                  Currently a Technology Solutions Consultant at Credera.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/alumni/andy.png" alt="Andy Ma" />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Andy Ma</p>
+                    <p class="subtitle is-5">2022-2024 Finance Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previous Finance Director interested in solving complex business 
+                  challenges, while also leveraging data storytelling!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/alumni/ethan.png" alt="Ethan Wong" />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Ethan Wong</p>
+                    <p class="subtitle is-5">2022-2024 Logistics Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previous Logistics Director passionate about using data to solve business problems. 
+                  Currently a Portfolio Management Analyst at Amherst!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img
+                    src="../assets/alumni/michael.png"
+                    alt="Michael Crosson"
+                  />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Michael Crosson</p>
+                    <p class="subtitle is-5">2022-2024 Founder and President</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previous President and Founder of BAXA who loves turning data into insights!
+                  Currently an AI Business Analyst at CourtAvenue.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/alumni/rushil.png" alt="Rushil Nakkana" />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Rushil Nakkana</p>
+                    <p class="subtitle is-5">2023-2024 Academic Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previous Academic Director interested in (NLP) 
+                  and (LLMs). Currently a Specialist Data Analyst at AT&T.
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="column is-one-third">
+            <div class="card fade-in">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="../assets/alumni/timmy.png" alt="Timmy Ren" />
+                  <a class="linkedin" href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Timmy Ren</p>
+                    <p class="subtitle is-5">2022-2024 Innovation Director</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Previous Social and Innovation Director interested in using analytics not just as a tool, 
+                  but as a means to drive positive change. 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer and Newsletter Signup -->
+    <footer id="baxa-footer" class="footer">
+      <div class="content container has-text-centered columns">
+        <div class="column is-3">
+          <a href="../index.html">
+            <img src="../assets/images/logo.svg" />
+          </a>
+        </div>
+        <div class="column is-7">
+          <div class="title is-hidden-mobile">
+            Subscribe to Our Mailing List
+          </div>
+          <div class="subtitle">
+            Sign up to receive the latest updates from Texas BAXA!
+          </div>
+        </div>
+        <div class="column my-2 is-2">
+          <button class="button baxa-button is-medium">
+            <a href="https://forms.gle/v4PQqzLAAU1FJokk7" target="_blank"
+              >Sign Up</a
+            >
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for the Team Image Scroll Effect, Parallax, and Fade-In on Scroll -->
+    <script>
+      // Navbar background change on scroll
+      window.addEventListener("scroll", function () {
+        const nav = document.getElementById("baxa-nav");
+        if (window.scrollY > 50) {
+          nav.classList.add("is-active");
+        } else {
+          nav.classList.remove("is-active");
+        }
+      });
+
+      // Parallax Effect for the banner: move the background up as you scroll so you see more of the bottom.
+      window.addEventListener("scroll", function () {
+        const banner = document.querySelector(".team-section");
+        if (banner) {
+          const offset = window.pageYOffset;
+          // Adjust the background position's vertical percentage based on scroll offset.
+          banner.style.backgroundPosition =
+            "center " + (100 + offset * 0.3) + "%";
+        }
+      });
+
+      // Intersection Observer for fade-in effect on officer cards and text elements
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (
+          entries,
+          observer
+        ) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        appearOptions);
+
+        faders.forEach((fader) => {
+          appearOnScroll.observe(fader);
+        });
+      });
+    </script>
+  </body>
+</html>

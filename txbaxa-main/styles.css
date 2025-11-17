@@ -1,0 +1,561 @@
+/* --- Global Stylesheet --- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+   overflow: hidden; /* Hide scrollbars */
+  }
+
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #36185f;
+    --secondary-color: #aa82bb;
+    --accent-color: #d2b48c;
+    --dark-color: #000;
+    --bg-color: #e7e7e7;
+    --content-width: 1000px;
+}
+
+/* --- Main Styles --- */
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+}
+
+#baxa-nav .container, #baxa-features.container, #baxa-footer .container, #baxa-board .container, #baxa-membership .container {
+    /* max-width: var(--content-width); */
+    /* max-width: auto; */
+    margin: 0 auto;
+}
+
+.baxa-button, #baxa-footer input {
+    outline: none;
+    border: none;
+    background-color: var(--bg-color);
+}
+
+.baxa-button a {
+    color: var(--dark-color);
+}
+
+.baxa-button.is-inverted {
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    background-color: transparent;
+}
+
+
+#baxa-features *, #baxa-board .card, #baxa-membership .box {
+    color: var(--dark-color) !important;
+
+}
+
+/* --- Navbar Styles --- */
+
+#baxa-nav {
+    height: 75px;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#baxa-nav .navbar-brand .navbar-item img {
+    max-height: 80px;
+}
+
+#baxa-nav .navbar-dropdown {
+    background-color: var(--bg-color);
+    font-size: 17px;
+}
+
+#baxa-nav .navbar-item, #baxa-nav .navbar-item:visited {
+    background-color: var(--bg-color);
+}
+
+#baxa-nav .navbar-item:hover, #baxa-nav .navbar-dropdown:hover, #baxa-nav .navbar-link:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+#baxa-nav .navbar-end a > img {
+    height: 20px;
+}
+
+#baxa-nav a.active {
+    color: var(--primary-color);
+}
+
+#baxa-nav .navbar-brand {
+    align-items: center;
+}
+
+/* --- Hero Styles --- */
+
+#baxa-hero.hero {
+    background-color: var(--primary-color);
+    background-image: url(assets/images/BAXA_Hero_page.jpg);
+    background-size: cover;          /*Ensures the image covers the entire area */
+    background-position: center 20%;    /* Centers the image */
+    background-repeat: no-repeat;   /* Prevents the image from tiling */
+    height: 100vh;
+    overflow: hidden;
+}
+#baxa-hero.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 112%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay color */
+    z-index: 1;                           /* Positions overlay above the background */
+}
+
+#baxa-hero .hero-body, #baxa-hero .column, #baxa-hero .columns {
+    margin: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+#baxa-hero .hero-content {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    z-index: 2;                          /* Ensures content is above the overlay */
+    color: var(--bg-color);
+}
+
+#baxa-hero .hero-content .title{
+    margin-bottom: 20px !important;
+    color: var(--bg-color);
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    animation: slideIn 2s ease-out forwards;
+    z-index: 2;
+    
+}
+/* Animation Keyframes */
+@keyframes slideIn {
+0% {
+    opacity: 0;
+    transform: translateY(50px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+#baxa-hero .hero-content .subtitle {
+    color: var(--bg-color);
+    font-size: 25px;
+    z-index: 2;
+    animation: slideIn 2s ease-out forwards;
+}
+
+#baxa-hero .column {
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+}
+
+#baxa-hero .buttons {
+    margin-left: 3px;
+    animation: slideIn 2s ease-out forwards;
+}
+
+#wave-divider {
+    width: 10000;
+    position: relative;
+    height: 5000;                  /* Adjusts the visible height of the wave */
+    overflow: visible;              /* Allows the wave to extend beyond the section */
+    z-index: 2;                     /* Ensures the wave overlaps the hero section */
+}
+
+#wave-divider .wave {
+    position: absolute;
+    bottom: -41px;                  /* Adjust this value to overlap the hero */
+    left: 0;
+    width: 10000;
+    height: 15000;                  /* Increases the wave height for a larger overlap */
+}
+#wave-divider .inverted-wave {
+    position: absolute;
+    top: 40px;                   /* Position right below the top wave */
+    left: 0;
+    width: 10000;
+    height: 300px;
+    transform: scaleX(-1) scaleY(-1);       /* Flips the wave vertically */
+}
+
+
+/* --- Our Mission Section Styles --- */
+  
+  /* Card grid layout */
+  .events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* Card styles */
+  .card_social {
+    background: white;
+    border-radius: px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  .card_social:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+  
+  .card_social img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    filter: brightness(90%);
+    transition: filter 0.5s ease;
+  }
+  .card_social:hover img {
+    filter: brightness(100%);
+  }
+  .card_social-content {
+    padding: 2rem;
+  }
+  .card_social-content h3 {
+    margin: 0;
+    font-weight:bolder;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color:#36185f;
+  }
+  .card_social-content p {
+    margin-top: 0.5rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Fade-in effect */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+#baxa-features {
+    max-width: var(--content-width);
+    padding: 80px 0; 
+}
+
+#baxa-features .title {
+    margin-top: 200px;
+    margin-bottom: 40px;
+    font-size: 75px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    color: var(--primary-color) !important; /* Replace #desiredColor with your preferred color */
+}
+
+#baxa-features .has-text-justified {
+    margin-bottom: 45px;
+    font-size: 50;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    
+}
+/* Column styles */
+#baxa-features .column {
+    padding: 0;  /* Remove padding from columns */
+    margin: 0;   /* Remove margin from columns */
+    flex: 1;  /* Make the columns take up equal space */
+}
+/* Card Styles */
+.card {
+    display: grid;
+    grid-template-columns: 290px;
+    grid-template-rows: 290px 345px 25px;
+    grid-template-areas: "image" "text" "stats";
+
+    border-radius:  10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    margin: 0;  /* Remove margin from cards */
+    border-radius: 10;  /* Optionally, remove border radius for sharp edges */
+}
+
+.card_index{
+    display: grid;
+    grid-template-columns: 345px;
+    grid-template-rows: 345px 345px 25px;
+    grid-template-areas: "image" "text" "stats";
+
+    box-shadow: 0px 0px 0.5px rgba(0,0,0,0.9);
+    text-align: center;
+    margin: 0 auto;  /* Remove margin from cards */
+    
+}
+.card-image{
+    width: 100%;
+    grid-area: image;
+    border-top-left-radius: 15px;
+}
+.card-text{
+    grid-area: text;
+
+}
+.card-stats{
+    grid-area: stats;
+}
+#baxa-features .card-title {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ #baxa-features figure img {
+    object-fit: cover;
+    border-radius: 0;
+ }
+
+#baxa-features .subtitle {
+    line-height: 1.5;
+    padding-top: 10px;
+}
+
+#baxa-features .symbol {
+    height: 30px;
+    margin: 10px 0;
+}
+
+#baxa-features .content {
+    font-size: 20px;
+}
+
+/* --- Footer Styles --- */
+
+ #baxa-footer {
+    background-color: var(--accent-color);
+    padding: 80px 0;
+ }
+
+ #baxa-footer * {
+    color: var(--dark-color) !important;
+    font-weight: bold;
+ }
+ 
+ #baxa-footer .field {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+ }
+
+ #baxa-footer button {
+    width: 100%;
+ }
+
+  #baxa-footer .column:nth-of-type(1) {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+ /* --- Officers Page Styles --- */
+ .team-section {
+    background-image: url('/assets/images/Laughing_suits.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center 75%; /* Increased value moves the image down */
+    height: 45vh;
+    position: relative;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the whole container */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center; /* Ensures text is centered */
+    padding: 0; /* Remove extra padding */
+}
+
+.team-title {
+    color: white;
+    font-size: 4rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-align: center;
+    z-index: 1; /* Keeps it above overlay */
+    width: 100%; /* Ensures it takes full width */
+}
+
+.baxa-board {
+    padding: 50px;
+    background-color: #f4f4f4; /* You can adjust this color */
+    margin-top: 50px;
+}
+
+ #baxa-board, #baxa-membership {
+    padding: 0px 0;
+    background-color: var(--primary-color);
+ }
+
+ #baxa-board .hero-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0px;
+ }
+
+ #baxa-board .title, #baxa-board .subtitle {
+    color: var(--dark-color);
+ }
+
+ #baxa-board .card {
+    background-color: var(--bg-color);
+    width: 280px;
+    height: 540px;
+ }
+
+ #baxa-board figure img {
+    width: 280px;
+    height: auto;
+ }
+
+
+ #baxa-board .linkedin {
+    position:absolute;
+    bottom: 20px;
+    right: 35px;
+    color: var(--bg-color);
+ }
+
+ #baxa-board .linkedin i {
+    width: 30px;
+ }
+
+ /* --- Membership Page Styles --- */
+
+ #baxa-membership .hero-body{
+    max-width: auto;
+ }
+
+ #baxa-membership .columns {
+    justify-content: center;
+    align-items: center;
+}
+
+ #baxa-membership img {
+    /* align-items: center; */
+    object-fit: cover;
+    max-height: 20%;
+ }
+
+ #baxa-membership li {
+    text-align: left;
+    margin: 20px 0;
+    font-size: large;
+ }
+
+ #baxa-membership li:nth-of-type(1) {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: large;
+ }
+
+ #baxa-interest-form, #baxa-application-form {
+    padding: 20px 0;
+ }
+
+  #baxa-interest-form .title, #baxa-application-form .title {
+    color: var(--dark-color);
+  }
+
+  #baxa-membership a {
+    color: var(--secondary-color);
+  }
+
+  /* --- RESPONSIVE DESIGN --- */
+
+  @media screen and (max-width: 1023px) {
+    .navbar-menu {
+    background-color: var(--bg-color);
+    }
+
+  }
+
+  @media screen and (max-width: 769px) {
+
+    #baxa-hero .hero-content {
+        text-align: center;
+        padding-top: 75px;
+        padding-bottom: 65px;
+        height: 100%;
+    }
+
+    #baxa-hero .hero-body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #baxa-hero .column:nth-of-type(2) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #baxa-hero .subtitle {
+        padding: 30px 10px 10px 10px;
+    }
+
+    #baxa-features, #baxa-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #baxa-features .column {
+       width: 1px;
+    }
+
+    #baxa-footer img {
+        margin-bottom: 20px;
+    }
+
+    iframe {
+    width: 90vw;
+    height: 100vh;
+    }
+
+    .is-hidden-mobile {
+        display: none !important;
+    }
+
+  }
